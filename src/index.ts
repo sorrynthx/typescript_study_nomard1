@@ -3,3 +3,4 @@ const player = {
 };
 
 player.age = 2;
+console.log("test1");
