@@ -30,7 +30,7 @@ abstract class User {
   ) {}
 
   // 추상메소드는 추상클래스로부터 상속받은 모든 것을 구현해야함
-  abstract getNickName(): void;
+  abstract getNickName(): string;
 
   // private 변수를 함수를 이용해 사용 가능함
   getFullName() {
@@ -43,12 +43,13 @@ class Player2 extends User {
     // private 으로 보호되기 때문에 접근 불가
     // protected 으로 변경 시, 외부에서 접근은 안되지만 상속 시, 접근 가능
     console.log(this.nickname);
+    return this.nickname;
   }
 }
 
 // 추상클래스 생성하여 안전하게 사용 (외부 수정 불가함)
 const js = new Player2("JS", "LEE", "JJJSSS");
-console.log(js.getFullName());
+console.log(js.getFullName(), js.getNickName());
 
 /*
 구분　　　선언한 클래스 내　상속받은 클래스 내　   인스턴스
